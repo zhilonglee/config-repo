@@ -1,0 +1,26 @@
+server:
+  port: 8031
+spring:
+  application:
+    name: microservice-zhilong-hystrix-turbine
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+    serviceUrl:
+      defaultZone: http://admin:admin@localhost:8761/eureka #http://peer1:8761/eureka,http://peer2:8762/eureka 
+  instance:
+    prefer-ip-address: true
+    instanceId: ${spring.application.name}:${spring.cloud.client.ipAddress}:${spring.application.instance_id:${server.port}}
+turbine:
+  aggregator:
+    clusterConfig: default #MICROSERVICE-ZHILONG-MOVIE-RIBBON-WITH-HYSTRIX,MICROSERVICE-ZHILONG-CONSUMER-MOVIE
+  appConfig: microservice-zhilong-movie-ribbon-with-hystrix #,microservice-zhilong-consumer-movie
+  #clusterNameExpression: "'default'"
+  
+turbine.instanceUrlSuffix.MICROSERVICE-ZHILONG-MOVIE-RIBBON-WITH-HYSTRIX: /ribbon/hystrix.stream
+
+logging: 
+  level:
+    root: INFO
+    com.netflix.turbine.monitor: DEBUG

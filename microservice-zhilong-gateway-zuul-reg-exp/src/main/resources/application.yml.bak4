@@ -1,0 +1,21 @@
+server:
+  port: 8042
+spring:
+  application:
+    name: microservice-zhilong-gateway-zuul
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+    serviceUrl:
+      defaultZone: http://admin:admin@localhost:8761/eureka #http://peer1:8761/eureka,http://peer2:8762/eureka 
+  instance:
+    prefer-ip-address: true
+    instanceId: ${spring.application.name}:${spring.cloud.client.ipAddress}:${spring.application.instance_id:${server.port}}
+zuul:
+  prefix: /simple
+  stripPrefix: false
+#access url: http://10.70.194.181:8042/simple/v1/microservice-zhilong-provider-user/1
+logging:
+  level:
+    com.netflix: DEBUG

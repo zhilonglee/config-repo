@@ -1,0 +1,22 @@
+server:
+  port: 8042
+spring:
+  application:
+    name: microservice-zhilong-gateway-zuul
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+    fetchRegistry: true 
+    serviceUrl:
+      defaultZone: http://admin:admin@localhost:8761/eureka #http://peer1:8761/eureka,http://peer2:8762/eureka
+  instance:
+    prefer-ip-address: true
+    instanceId: ${spring.application.name}:${spring.cloud.client.ipAddress}:${spring.application.instance_id:${server.port}}
+
+#Extremely large files will also require elevated timeout settings 
+#if the proxy route takes you through a Ribbon load balancer, e.g.
+hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 60000
+ribbon:
+  ConnectTimeout: 3000
+  ReadTimeout: 60000

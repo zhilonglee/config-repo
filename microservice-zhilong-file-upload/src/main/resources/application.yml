@@ -1,0 +1,20 @@
+server:
+  port: 8050
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://admin:admin@localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+    instanceId: ${spring.application.name}:${spring.cloud.client.ipAddress}:${spring.application.instance_id:${server.port}}
+    
+spring:
+  application:
+    name: microservice-zhilong-file-upload
+  http:
+    multipart:
+      max-file-size: 2000Mb      # Max file size，默认1M
+      max-request-size: 2500Mb   # Max request size，默认10M

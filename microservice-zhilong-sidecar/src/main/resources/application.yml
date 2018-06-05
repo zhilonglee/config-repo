@@ -1,0 +1,17 @@
+server:
+  port: 8070
+spring:
+  application:
+    name: microservice-zhilong-sidecar
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+    serviceUrl:
+      defaultZone: http://admin:admin@localhost:8761/eureka #http://peer1:8761/eureka,http://peer2:8762/eureka
+  instance:
+    prefer-ip-address: true
+    instanceId: ${spring.application.name}:${spring.cloud.client.ipAddress}:${spring.application.instance_id:${server.port}}
+sidecar:
+  port: 8060
+  health-uri: http://localhost:8060/health.json

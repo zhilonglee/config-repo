@@ -1,0 +1,22 @@
+server:
+  port: 8010
+spring:
+  application:
+    name: microservice-zhilong-test
+demo:
+  app:
+    apiUrl: "http://22222.com/xxxxx"
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+    serviceUrl:
+      defaultZone: http://admin:admin@localhost:8761/eureka
+  instance:
+    prefer-ip-address: true
+    instanceId: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${server.port}}}
