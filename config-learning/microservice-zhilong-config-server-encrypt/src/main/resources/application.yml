@@ -5,7 +5,7 @@ spring:
     config:
       server:
         git:
-          uri: https://git.oschina.net/it-much/config-repo-51cto-video
+          uri: https://github.com/zhilonglee/config-repo
           username: 
           password: 
           
