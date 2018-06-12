@@ -2,8 +2,8 @@ security:
   basic:
     enabled: true
   user:
-    name: user
-    password: password123
+    name: admin
+    password: admin
 server:
   port: 8080
 spring:
@@ -11,7 +11,9 @@ spring:
     config:
       server:
         git:
-          uri: https://git.oschina.net/it-much/config-repo-51cto-video
+          uri: https://github.com/zhilonglee/config-repo
           username: 
-          password: 
+          password:
+encrypt:
+  key: foo
           
