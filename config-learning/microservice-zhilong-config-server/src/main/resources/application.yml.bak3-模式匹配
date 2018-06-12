@@ -5,9 +5,9 @@ spring:
     config:
       server:
         git:
-          uri: https://git.oschina.net/it-much/config-repo-51cto-video      # 公用
+          uri: https://github.com/zhilonglee/config-repo      # 公用
           repos:
-            simple: https://git.oschina.net/it-much/simple
+            simple: https://github.com/zhilonglee/simple
             special:
               pattern: special*/dev*,special*/test*
-              uri: https://git.oschina.net/it-much/special
+              uri: https://github.com/zhilonglee/special

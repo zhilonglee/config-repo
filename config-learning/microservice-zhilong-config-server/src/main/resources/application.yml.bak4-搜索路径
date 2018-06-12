@@ -5,7 +5,7 @@ spring:
     config:
       server:
         git:
-          uri: https://git.oschina.net/it-much/config-repo-51cto-video      # 公用
+          uri: https://github.com/zhilonglee/config-repo      # 公用
           search-paths:
             - foo   # foo路径
             - bar   # bar路径

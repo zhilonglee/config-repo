@@ -6,5 +6,8 @@ spring:
       server:
         git:
           uri: https://github.com/zhilonglee/config-repo
-          #username: 
-          #password:
+          repos:
+            simple: https://github.com/zhilonglee/simple
+            special:
+              pattern: special*/dev*,special*/test*
+              uri: https://github.com/zhilonglee/special
