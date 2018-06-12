@@ -5,15 +5,20 @@ spring:
     config:
       server:
         git:
-          uri: https://git.oschina.net/it-much/config-repo-51cto-video
+          uri: https://github.com/zhilonglee/config-repo
           username: 
           password: 
   application:
-    name: microservice-config-server-eureka
-
+    name: microservice-zhilong-config-server-eureka
+#security:
+#  basic:
+#    enabled: true
+#  user:
+#    name: admin
+#    password: admin
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://user:password123@localhost:8761/eureka
+      defaultZone: http://admin:admin@localhost:8761/eureka
   instance:
     prefer-ip-address: true
