@@ -8,5 +8,6 @@ spring:
           uri: https://github.com/zhilonglee/config-repo
           username:
           password:
+          force-pull: true
 encrypt:
   key: foo
